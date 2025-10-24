@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\rappi.Application\rappi.Application.csproj" />
+    <ProjectReference Include="..\rappi.Infrastructure\rappi.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>

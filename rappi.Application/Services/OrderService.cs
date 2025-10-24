@@ -1,74 +1,61 @@
-using Microsoft.EntityFrameworkCore;
 using rappi.Application.Interfaces;
 using rappi.Domain.Models;
-using rappi.Infrastructure.Data;
 
 namespace rappi.Application.Services;
 
 public class OrderService : IOrderService
 {
-    private readonly AppDbContext _db;
-    public OrderService(AppDbContext db) => _db = db;
+    private readonly IRepository<Order> _orders;
+    private readonly IRepository<Customer> _customers;
+    private readonly IRepository<OrderStatus> _statuses;
 
+    public OrderService(IRepository<Order> orders, IRepository<Customer> customers, IRepository<OrderStatus> statuses)
+    {
+        _orders = orders;
+        _customers = customers;
+        _statuses = statuses;
+    }
+
+    // Obtener todas las órdenes
     public Task<List<Order>> GetAllAsync() =>
-        _db.Orders
-            .Include(o => o.Details)
-            .Include(o => o.Status)
-            .Include(o => o.Customer)
-            .ToListAsync();
+        _orders.GetAllIncludingAsync(o => o.Details, o => o.Status, o => o.Customer);
 
+    // Obtener orden por ID
     public Task<Order?> GetByIdAsync(int id) =>
-        _db.Orders
-            .Include(o => o.Details)
-            .Include(o => o.Status)
-            .Include(o => o.Customer)
-            .FirstOrDefaultAsync(o => o.Id == id);
+        _orders.GetByIdIncludingAsync(id, o => o.Details, o => o.Status, o => o.Customer);
 
+    // Crear una nueva orden con validaciones
     public async Task<Order> AddAsync(Order o)
     {
-        // Validación: Cliente debe existir
-        var customerExists = await _db.Customers.AnyAsync(c => c.Id == o.CustomerId);
-        if (!customerExists)
+        var customer = await _customers.GetByIdAsync(o.CustomerId);
+        if (customer == null)
             throw new ArgumentException($"El cliente con ID {o.CustomerId} no existe.");
 
-        // Validación: Estado debe existir
-        var statusExists = await _db.OrderStatus.AnyAsync(s => s.Id == o.StatusId);
-        if (!statusExists)
+        var status = await _statuses.GetByIdAsync(o.StatusId);
+        if (status == null)
             throw new ArgumentException($"El estado con ID {o.StatusId} no es válido.");
 
-        // Validación: fecha
         if (o.OrderDate == default)
             throw new ArgumentException("La fecha de la orden no es válida.");
 
-        await _db.Orders.AddAsync(o);
-        await _db.SaveChangesAsync();
-        return o;
+        return await _orders.AddAsync(o);
     }
 
+    // Actualizar el estado de una orden
     public async Task<bool> UpdateStatusAsync(int id, int statusId)
     {
-        var order = await _db.Orders.FindAsync(id);
+        var order = await _orders.GetByIdAsync(id);
         if (order == null) return false;
 
-        var statusExists = await _db.OrderStatus.AnyAsync(s => s.Id == statusId);
-        if (!statusExists)
+        var status = await _statuses.GetByIdAsync(statusId);
+        if (status == null)
             throw new ArgumentException($"El estado con ID {statusId} no existe.");
 
         order.StatusId = statusId;
-        await _db.SaveChangesAsync();
-        return true;
+        return await _orders.UpdateAsync(order);
     }
 
-    public async Task<bool> DeleteAsync(int id)
-    {
-        var order = await _db.Orders
-            .Include(o => o.Details)
-            .FirstOrDefaultAsync(o => o.Id == id);
-
-        if (order == null) return false;
-
-        _db.Orders.Remove(order);
-        await _db.SaveChangesAsync();
-        return true;
-    }
+    // Eliminar orden existente
+    public Task<bool> DeleteAsync(int id) => _orders.DeleteAsync(id);
+    
 }

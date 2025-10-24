@@ -41,11 +41,6 @@
 /home/mylisuthy/Escritorio/rappi-HU1/rappi.Api/obj/Debug/net8.0/scopedcss/bundle/rappi.Api.styles.css
 /home/mylisuthy/Escritorio/rappi-HU1/rappi.Api/obj/Debug/net8.0/staticwebassets.build.json
 /home/mylisuthy/Escritorio/rappi-HU1/rappi.Api/obj/Debug/net8.0/staticwebassets.development.json
-/home/mylisuthy/Escritorio/rappi-HU1/rappi.Api/obj/Debug/net8.0/staticwebassets/msbuild.rappi.Api.Microsoft.AspNetCore.StaticWebAssets.props
-/home/mylisuthy/Escritorio/rappi-HU1/rappi.Api/obj/Debug/net8.0/staticwebassets/msbuild.build.rappi.Api.props
-/home/mylisuthy/Escritorio/rappi-HU1/rappi.Api/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.rappi.Api.props
-/home/mylisuthy/Escritorio/rappi-HU1/rappi.Api/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.rappi.Api.props
-/home/mylisuthy/Escritorio/rappi-HU1/rappi.Api/obj/Debug/net8.0/staticwebassets.pack.json
 /home/mylisuthy/Escritorio/rappi-HU1/rappi.Api/obj/Debug/net8.0/rappi.Api.csproj.Up2Date
 /home/mylisuthy/Escritorio/rappi-HU1/rappi.Api/obj/Debug/net8.0/rappi.Api.dll
 /home/mylisuthy/Escritorio/rappi-HU1/rappi.Api/obj/Debug/net8.0/refint/rappi.Api.dll
@@ -139,3 +134,10 @@
 /home/mylisuthy/Escritorio/rappi-HU1/rappi.Api/bin/Debug/net8.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 /home/mylisuthy/Escritorio/rappi-HU1/rappi.Api/bin/Debug/net8.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 /home/mylisuthy/Escritorio/rappi-HU1/rappi.Api/bin/Debug/net8.0/runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll
+/home/mylisuthy/Escritorio/rappi-HU1/rappi.Api/bin/Debug/net8.0/rappi.Api.staticwebassets.endpoints.json
+/home/mylisuthy/Escritorio/rappi-HU1/rappi.Api/obj/Debug/net8.0/rpswa.dswa.cache.json
+/home/mylisuthy/Escritorio/rappi-HU1/rappi.Api/obj/Debug/net8.0/rjimswa.dswa.cache.json
+/home/mylisuthy/Escritorio/rappi-HU1/rappi.Api/obj/Debug/net8.0/rjsmrazor.dswa.cache.json
+/home/mylisuthy/Escritorio/rappi-HU1/rappi.Api/obj/Debug/net8.0/rjsmcshtml.dswa.cache.json
+/home/mylisuthy/Escritorio/rappi-HU1/rappi.Api/obj/Debug/net8.0/staticwebassets.build.json.cache
+/home/mylisuthy/Escritorio/rappi-HU1/rappi.Api/obj/Debug/net8.0/staticwebassets.build.endpoints.json

@@ -2,7 +2,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\rappi.Domain\rappi.Domain.csproj" />
-    <ProjectReference Include="..\rappi.Infrastructure\rappi.Infrastructure.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

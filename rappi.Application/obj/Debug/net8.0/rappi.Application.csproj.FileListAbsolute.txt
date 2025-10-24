@@ -2,9 +2,7 @@
 /home/mylisuthy/Escritorio/rappi-HU1/rappi.Application/bin/Debug/net8.0/rappi.Application.dll
 /home/mylisuthy/Escritorio/rappi-HU1/rappi.Application/bin/Debug/net8.0/rappi.Application.pdb
 /home/mylisuthy/Escritorio/rappi-HU1/rappi.Application/bin/Debug/net8.0/rappi.Domain.dll
-/home/mylisuthy/Escritorio/rappi-HU1/rappi.Application/bin/Debug/net8.0/rappi.Infrastructure.dll
 /home/mylisuthy/Escritorio/rappi-HU1/rappi.Application/bin/Debug/net8.0/rappi.Domain.pdb
-/home/mylisuthy/Escritorio/rappi-HU1/rappi.Application/bin/Debug/net8.0/rappi.Infrastructure.pdb
 /home/mylisuthy/Escritorio/rappi-HU1/rappi.Application/obj/Debug/net8.0/rappi.Application.csproj.AssemblyReference.cache
 /home/mylisuthy/Escritorio/rappi-HU1/rappi.Application/obj/Debug/net8.0/rappi.Application.GeneratedMSBuildEditorConfig.editorconfig
 /home/mylisuthy/Escritorio/rappi-HU1/rappi.Application/obj/Debug/net8.0/rappi.Application.AssemblyInfoInputs.cache

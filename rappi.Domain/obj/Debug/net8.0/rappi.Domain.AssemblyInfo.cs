@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("rappi.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0a46efb3ead82eb63203dfdaafa865607361e82a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b98a15feaa60855fc73df4380542175e98e197ac")]
 [assembly: System.Reflection.AssemblyProductAttribute("rappi.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("rappi.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

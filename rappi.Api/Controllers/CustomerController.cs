@@ -35,14 +35,15 @@ public class CustomersController : ControllerBase
             return BadRequest(new { message = ex.Message });
         }
     }
-
+    
     [HttpPut("{id:int}")]
-    public async Task<IActionResult> Put(int id, Customer c)
+    public async Task<IActionResult> Put(int id, [FromBody] CustomerUpdateDto dto)
     {
         try
         {
-            return await _svc.UpdateAsync(id, c)
-                ? Ok(c)
+            var updated = new Customer { Name = dto.Name, Email = dto.Email };
+            return await _svc.UpdateAsync(id, updated)
+                ? Ok(updated)
                 : NotFound();
         }
         catch (ArgumentException ex)

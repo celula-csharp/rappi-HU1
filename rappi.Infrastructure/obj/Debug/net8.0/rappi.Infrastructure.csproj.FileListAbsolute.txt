@@ -16,3 +16,5 @@
 /home/mylisuthy/Escritorio/rappi-HU1/rappi.Infrastructure/obj/Debug/net8.0/ref/rappi.Infrastructure.dll
 /home/mylisuthy/Escritorio/rappi-HU1/rappi.Infrastructure/bin/Debug/net8.0/rappi.Infrastructure.runtimeconfig.json
 /home/mylisuthy/Escritorio/rappi-HU1/rappi.Infrastructure/obj/Debug/net8.0/rappi.Infrastructure.genruntimeconfig.cache
+/home/mylisuthy/Escritorio/rappi-HU1/rappi.Infrastructure/bin/Debug/net8.0/rappi.Application.dll
+/home/mylisuthy/Escritorio/rappi-HU1/rappi.Infrastructure/bin/Debug/net8.0/rappi.Application.pdb
