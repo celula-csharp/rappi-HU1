@@ -16,7 +16,7 @@ public class CustomersController : ControllerBase
     [HttpGet("{id:int}")] public async Task<IActionResult> Get(int id) => (await _svc.GetByIdAsync(id)) is Customer c ? Ok(c) : NotFound();
 
     [HttpPost]
-    public async Task<IActionResult> Post(CustomerCreateDto dto)
+    public async Task<IActionResult> Post([FromBody] CustomerCreateDto dto)
     {
         var customer = new Customer
         {

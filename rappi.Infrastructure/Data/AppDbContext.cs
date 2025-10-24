@@ -10,19 +10,35 @@ public class AppDbContext : DbContext
     public DbSet<Customer> Customers { get; set; } = null!;
     public DbSet<Order> Orders { get; set; } = null!;
     public DbSet<OrderDetail> OrderDetails { get; set; } = null!;
+    public DbSet<OrderStatus> OrderStatus { get; set; } = null!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
 
-        // restricciones / longitudes / enums simples:
+        // Customer → Orders
         modelBuilder.Entity<Customer>()
             .HasMany(c => c.Orders)
             .WithOne(o => o.Customer)
             .HasForeignKey(o => o.CustomerId)
             .OnDelete(DeleteBehavior.Cascade);
-        
-        modelBuilder.Entity<Order>().Property(o => o.Status).HasMaxLength(50);
+
+        // Order → OrderStatus
+        modelBuilder.Entity<Order>()
+            .HasOne(o => o.Status)
+            .WithMany(s => s.Orders)
+            .HasForeignKey(o => o.StatusId)
+            .OnDelete(DeleteBehavior.Restrict);
+
+        // Propiedades específicas
         modelBuilder.Entity<OrderDetail>().Property(d => d.ProductName).HasMaxLength(200);
+
+        // Datos iniciales para OrderStatus
+        modelBuilder.Entity<OrderStatus>().HasData(
+            new OrderStatus { Id = 1, Name = "Pendiente" },
+            new OrderStatus { Id = 2, Name = "En preparación" },
+            new OrderStatus { Id = 3, Name = "Entregado" },
+            new OrderStatus { Id = 4, Name = "Cancelado" }
+        );
     }
 }
