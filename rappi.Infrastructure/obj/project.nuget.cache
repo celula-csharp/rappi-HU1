@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "w+nKeK9H8Qo=",
+  "dgSpecHash": "gc5DxQOHd60=",
   "success": true,
   "projectFilePath": "/home/mylisuthy/Escritorio/rappi-HU1/rappi.Infrastructure/rappi.Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -46,7 +46,9 @@
     "/home/mylisuthy/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "/home/mylisuthy/.nuget/packages/system.text.encodings.web/9.0.10/system.text.encodings.web.9.0.10.nupkg.sha512",
     "/home/mylisuthy/.nuget/packages/system.text.json/9.0.10/system.text.json.9.0.10.nupkg.sha512",
-    "/home/mylisuthy/.nuget/packages/system.threading.channels/7.0.0/system.threading.channels.7.0.0.nupkg.sha512"
+    "/home/mylisuthy/.nuget/packages/system.threading.channels/7.0.0/system.threading.channels.7.0.0.nupkg.sha512",
+    "/home/mylisuthy/.nuget/packages/microsoft.netcore.app.ref/8.0.21/microsoft.netcore.app.ref.8.0.21.nupkg.sha512",
+    "/home/mylisuthy/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.21/microsoft.aspnetcore.app.ref.8.0.21.nupkg.sha512"
   ],
   "logs": []
 }

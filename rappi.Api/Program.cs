@@ -1,3 +1,4 @@
+using rappi.Application.Interfaces;
 using rappi.Application.Services;
 using rappi.Infrastructure;
 
@@ -10,9 +11,9 @@ var conn = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddInfrastructure(conn);
 
 // Add services to the container.
-builder.Services.AddScoped<CustomerService>();
-builder.Services.AddScoped<OrderService>();
-
+builder.Services.AddScoped<ICustomerService, CustomerService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<OrderStatusService>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddControllers();

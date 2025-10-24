@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "oQ6wyPejHps=",
+  "dgSpecHash": "fCivb00b8QM=",
   "success": true,
   "projectFilePath": "/home/mylisuthy/Escritorio/rappi-HU1/rappi.Domain/rappi.Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/mylisuthy/.nuget/packages/microsoft.netcore.app.ref/8.0.21/microsoft.netcore.app.ref.8.0.21.nupkg.sha512",
+    "/home/mylisuthy/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.21/microsoft.aspnetcore.app.ref.8.0.21.nupkg.sha512"
+  ],
   "logs": []
 }

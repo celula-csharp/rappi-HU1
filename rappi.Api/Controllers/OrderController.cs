@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using rappi.Application.DTOs;
-using rappi.Application.Services;
+using rappi.Application.Interfaces;
 using rappi.Domain.Models;
 
 namespace rappi.Api.Controllers;
@@ -9,16 +9,16 @@ namespace rappi.Api.Controllers;
 [Route("api/[controller]")]
 public class OrderController : ControllerBase
 {
-    private readonly OrderService _svc;
-    public OrderController(OrderService svc) => _svc = svc;
+    private readonly IOrderService _svc;
+
+    public OrderController(IOrderService svc) => _svc = svc;
 
     [HttpGet]
-    public async Task<IActionResult> Get() 
-        => Ok(await _svc.GetAllAsync());
+    public async Task<IActionResult> Get() => Ok(await _svc.GetAllAsync());
 
     [HttpGet("{id:int}")]
-    public async Task<IActionResult> GetById(int id)
-        => (await _svc.GetByIdAsync(id)) is Order o ? Ok(o) : NotFound();
+    public async Task<IActionResult> GetById(int id) =>
+        (await _svc.GetByIdAsync(id)) is Order o ? Ok(o) : NotFound();
 
     [HttpPost]
     public async Task<IActionResult> Post([FromBody] OrderCreateDto dto)
@@ -34,12 +34,12 @@ public class OrderController : ControllerBase
     }
 
     [HttpPut("{id:int}")]
-    public async Task<IActionResult> Put(int id, [FromBody] OrderUpdateDto dto)
-        => await _svc.UpdateStatusAsync(id, dto.StatusId)
+    public async Task<IActionResult> Put(int id, [FromBody] OrderUpdateDto dto) =>
+        await _svc.UpdateStatusAsync(id, dto.StatusId)
             ? Ok(new { Id = id, StatusId = dto.StatusId })
             : BadRequest("Estado inválido");
 
     [HttpDelete("{id:int}")]
-    public async Task<IActionResult> Delete(int id)
-        => await _svc.DeleteAsync(id) ? Ok() : NotFound();
+    public async Task<IActionResult> Delete(int id) =>
+        await _svc.DeleteAsync(id) ? Ok() : NotFound();
 }
