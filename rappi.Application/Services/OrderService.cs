@@ -1,7 +1,7 @@
+using Microsoft.EntityFrameworkCore;
 using rappi.Application.Interfaces;
 using rappi.Domain.Models;
 using rappi.Infrastructure.Data;
-using Microsoft.EntityFrameworkCore;
 
 namespace rappi.Application.Services;
 
@@ -11,13 +11,35 @@ public class OrderService : IOrderService
     public OrderService(AppDbContext db) => _db = db;
 
     public Task<List<Order>> GetAllAsync() =>
-        _db.Orders.Include(o => o.Details).ToListAsync();
+        _db.Orders
+            .Include(o => o.Details)
+            .Include(o => o.Status)
+            .Include(o => o.Customer)
+            .ToListAsync();
 
     public Task<Order?> GetByIdAsync(int id) =>
-        _db.Orders.Include(o => o.Details).FirstOrDefaultAsync(o => o.Id == id);
+        _db.Orders
+            .Include(o => o.Details)
+            .Include(o => o.Status)
+            .Include(o => o.Customer)
+            .FirstOrDefaultAsync(o => o.Id == id);
 
     public async Task<Order> AddAsync(Order o)
     {
+        // Validación: Cliente debe existir
+        var customerExists = await _db.Customers.AnyAsync(c => c.Id == o.CustomerId);
+        if (!customerExists)
+            throw new ArgumentException($"El cliente con ID {o.CustomerId} no existe.");
+
+        // Validación: Estado debe existir
+        var statusExists = await _db.OrderStatus.AnyAsync(s => s.Id == o.StatusId);
+        if (!statusExists)
+            throw new ArgumentException($"El estado con ID {o.StatusId} no es válido.");
+
+        // Validación: fecha
+        if (o.OrderDate == default)
+            throw new ArgumentException("La fecha de la orden no es válida.");
+
         await _db.Orders.AddAsync(o);
         await _db.SaveChangesAsync();
         return o;
@@ -29,7 +51,8 @@ public class OrderService : IOrderService
         if (order == null) return false;
 
         var statusExists = await _db.OrderStatus.AnyAsync(s => s.Id == statusId);
-        if (!statusExists) return false;
+        if (!statusExists)
+            throw new ArgumentException($"El estado con ID {statusId} no existe.");
 
         order.StatusId = statusId;
         await _db.SaveChangesAsync();
@@ -38,10 +61,13 @@ public class OrderService : IOrderService
 
     public async Task<bool> DeleteAsync(int id)
     {
-        var e = await _db.Orders.FindAsync(id);
-        if (e == null) return false;
+        var order = await _db.Orders
+            .Include(o => o.Details)
+            .FirstOrDefaultAsync(o => o.Id == id);
 
-        _db.Orders.Remove(e);
+        if (order == null) return false;
+
+        _db.Orders.Remove(order);
         await _db.SaveChangesAsync();
         return true;
     }
