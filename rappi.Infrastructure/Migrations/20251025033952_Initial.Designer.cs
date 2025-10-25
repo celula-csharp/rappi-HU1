@@ -12,8 +12,8 @@ using rappi.Infrastructure.Data;
 namespace rappi.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20251025024101_Initial3")]
-    partial class Initial3
+    [Migration("20251025033952_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

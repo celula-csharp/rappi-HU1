@@ -1,56 +1,55 @@
-# Épicas
+# Rappi API
 
-## Gestión de Clientes
-Permitir el registro, consulta, actualización y eliminación de clientes.
+## Instalación
 
-## Gestión de Pedidos
-Permitir crear, modificar y listar pedidos asociados a clientes.
+1. Clonar repositorio:
 
-## Gestión de Detalles de Pedido
-Permitir registrar y consultar los productos dentro de un pedido.
+```bash
+git clone https://github.com/celula-csharp/rappi-HU1.git
+cd rappi-HU1
+```
 
-## Configuración de la Arquitectura DDD y Base de Datos
-Implementar la estructura de capas y configurar la persistencia con Entity Framework Core.
+2. Restaura dependencias
 
-## Historias de Usuario
+```bash
+dotnet restore
+```
 
-### EP1 – Gestión de Clientes
+3. Configura la cadena de conexión en [appsettings.json](rappi.Api/appsettings.json)
 
-- HU1: Como administrador quiero registrar un cliente con nombre y correo para mantener su información.
+```json
+"ConnectionStrings": {
+  "DefaultConnection": "server=localhost;database=rappi_db;user=root;password=;"
+}
+```
 
-- HU2: Como administrador quiero listar todos los clientes para visualizarlos en el sistema.
+4. Aplica migraciones
 
-- HU3: Como administrador quiero actualizar los datos de un cliente para mantener la información actualizada.
+```bash
+dotnet ef database update Initial --project rappi.Infrastructure --startup-project rappi.Api
+```
 
-- HU4: Como administrador quiero eliminar un cliente para depurar información obsoleta.
+5. Ejecutar proyecto
 
-### EP2 – Gestión de Pedidos
+```bash
+dotnet run --project rappi.Api
+```
 
-- HU5: Como administrador quiero registrar un pedido asociado a un cliente para controlar sus compras.
+---
 
-- HU6: Como administrador quiero actualizar el estado de un pedido para reflejar su progreso.
+## Ejecución y pruebas
 
-- HU7: Como administrador quiero consultar los pedidos de un cliente para conocer su historial.
+### Swagger
 
-### EP3 – Gestión de Detalles de Pedido
+Se pueden probar los endpoints directamente desde:
 
-- HU8: Como administrador quiero agregar productos, cantidades y precios a un pedido para calcular el total.
+```
+http://localhost:5239/swagger
+```
 
-- HU9: Como administrador quiero visualizar los detalles de un pedido para verificar la información.
+### Postman
 
-### EP4 – Configuración Técnica
-
-- HU10: Como desarrollador quiero definir las capas del sistema para mantener una arquitectura limpia.
-
-- HU11: Como desarrollador quiero configurar la base de datos y las migraciones para persistir los datos.
-
-- HU12: Como desarrollador quiero exponer endpoints RESTful para interactuar con los datos mediante Postman.
-
-## División del Trabajo
-| Miembro  | Responsabilidad principal        |	Entregables |
-|----------|----------------------------------|-------------|
-| Edison   | Arquitectura / Infraestructura   | Crear estructura DDD, configurar EF Core, DbContext, repositorios.	Capas Domain y Infrastructure, migraciones, appsettings. |
-| Yancelly | Backend Clientes                 | Implementar servicios y controladores para clientes.	CustomerService, CustomerController, pruebas en Postman. |
-| Daniel   | Backend Pedidos                  | Implementar lógica de pedidos (crear, listar, actualizar estado).	OrderService, OrderController. |
-| Juan     | Backend Detalles de Pedido       | Implementar lógica de OrderDetail y cálculo de totales.	OrderDetailService, endpoints. |
-| Sergio   | QA / Documentación / Integración |	Integrar endpoints, probar con Postman, documentar API y flujo.	Documento de pruebas, README, colección Postman. |
+1. Abrir postman
+2. Importar la colección desde [rappi.Api.postman_collection.json](docs/postman/rappi.Api.postman_collection.json)
+3. Importar los test de postman desde [rappi.Api.postman_test_run.json](docs/postman/rappi.Api.postman_test_run.json)
+4. (Si es necesario) Configura la variable `{{base_url}}` por el localhost en el que este corriendo la aplicación. Por ejemplo, `http://localhost:5239`
