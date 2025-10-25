@@ -1,0 +1,12 @@
+/home/mylisuthy/Escritorio/rappi-HU1/rappi.Domain/bin/Debug/net8.0/rappi.Domain.deps.json
+/home/mylisuthy/Escritorio/rappi-HU1/rappi.Domain/bin/Debug/net8.0/rappi.Domain.dll
+/home/mylisuthy/Escritorio/rappi-HU1/rappi.Domain/bin/Debug/net8.0/rappi.Domain.pdb
+/home/mylisuthy/Escritorio/rappi-HU1/rappi.Domain/obj/Debug/net8.0/rappi.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/mylisuthy/Escritorio/rappi-HU1/rappi.Domain/obj/Debug/net8.0/rappi.Domain.AssemblyInfoInputs.cache
+/home/mylisuthy/Escritorio/rappi-HU1/rappi.Domain/obj/Debug/net8.0/rappi.Domain.AssemblyInfo.cs
+/home/mylisuthy/Escritorio/rappi-HU1/rappi.Domain/obj/Debug/net8.0/rappi.Domain.csproj.CoreCompileInputs.cache
+/home/mylisuthy/Escritorio/rappi-HU1/rappi.Domain/obj/Debug/net8.0/rappi.Domain.sourcelink.json
+/home/mylisuthy/Escritorio/rappi-HU1/rappi.Domain/obj/Debug/net8.0/rappi.Domain.dll
+/home/mylisuthy/Escritorio/rappi-HU1/rappi.Domain/obj/Debug/net8.0/refint/rappi.Domain.dll
+/home/mylisuthy/Escritorio/rappi-HU1/rappi.Domain/obj/Debug/net8.0/rappi.Domain.pdb
+/home/mylisuthy/Escritorio/rappi-HU1/rappi.Domain/obj/Debug/net8.0/ref/rappi.Domain.dll
