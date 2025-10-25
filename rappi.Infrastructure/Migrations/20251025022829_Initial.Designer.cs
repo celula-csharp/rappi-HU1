@@ -12,8 +12,8 @@ using rappi.Infrastructure.Data;
 namespace rappi.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20251023180614_InitialCreate1")]
-    partial class InitialCreate1
+    [Migration("20251025022829_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,7 +25,7 @@ namespace rappi.Infrastructure.Migrations
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
 
-            modelBuilder.Entity("rappi.Domain.Models.Customer", b =>
+            modelBuilder.Entity("rappi.Domain.Entities.Customer", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -35,8 +35,7 @@ namespace rappi.Infrastructure.Migrations
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("varchar(200)");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -47,7 +46,7 @@ namespace rappi.Infrastructure.Migrations
                     b.ToTable("Customers");
                 });
 
-            modelBuilder.Entity("rappi.Domain.Models.Order", b =>
+            modelBuilder.Entity("rappi.Domain.Entities.Order", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -61,19 +60,19 @@ namespace rappi.Infrastructure.Migrations
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
+                    b.Property<int>("StatusId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CustomerId");
 
+                    b.HasIndex("StatusId");
+
                     b.ToTable("Orders");
                 });
 
-            modelBuilder.Entity("rappi.Domain.Models.OrderDetail", b =>
+            modelBuilder.Entity("rappi.Domain.Entities.OrderDetail", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -102,20 +101,67 @@ namespace rappi.Infrastructure.Migrations
                     b.ToTable("OrderDetails");
                 });
 
-            modelBuilder.Entity("rappi.Domain.Models.Order", b =>
+            modelBuilder.Entity("rappi.Domain.Entities.OrderStatus", b =>
                 {
-                    b.HasOne("rappi.Domain.Models.Customer", "Customer")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("OrderStatus");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Pendiente"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "En preparación"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Entregado"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Cancelado"
+                        });
+                });
+
+            modelBuilder.Entity("rappi.Domain.Entities.Order", b =>
+                {
+                    b.HasOne("rappi.Domain.Entities.Customer", "Customer")
                         .WithMany("Orders")
                         .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("rappi.Domain.Entities.OrderStatus", "Status")
+                        .WithMany("Orders")
+                        .HasForeignKey("StatusId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.Navigation("Customer");
+
+                    b.Navigation("Status");
                 });
 
-            modelBuilder.Entity("rappi.Domain.Models.OrderDetail", b =>
+            modelBuilder.Entity("rappi.Domain.Entities.OrderDetail", b =>
                 {
-                    b.HasOne("rappi.Domain.Models.Order", "Order")
+                    b.HasOne("rappi.Domain.Entities.Order", "Order")
                         .WithMany("Details")
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -124,14 +170,19 @@ namespace rappi.Infrastructure.Migrations
                     b.Navigation("Order");
                 });
 
-            modelBuilder.Entity("rappi.Domain.Models.Customer", b =>
+            modelBuilder.Entity("rappi.Domain.Entities.Customer", b =>
                 {
                     b.Navigation("Orders");
                 });
 
-            modelBuilder.Entity("rappi.Domain.Models.Order", b =>
+            modelBuilder.Entity("rappi.Domain.Entities.Order", b =>
                 {
                     b.Navigation("Details");
+                });
+
+            modelBuilder.Entity("rappi.Domain.Entities.OrderStatus", b =>
+                {
+                    b.Navigation("Orders");
                 });
 #pragma warning restore 612, 618
         }

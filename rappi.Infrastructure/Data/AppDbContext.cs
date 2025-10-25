@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using rappi.Domain.Models;
+using rappi.Domain.Entities;
 
 namespace rappi.Infrastructure.Data;
 
@@ -7,10 +7,10 @@ public class AppDbContext : DbContext
 {
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
-    public DbSet<Customer> Customers { get; set; } = null!;
-    public DbSet<Order> Orders { get; set; } = null!;
-    public DbSet<OrderDetail> OrderDetails { get; set; } = null!;
-    public DbSet<OrderStatus> OrderStatus { get; set; } = null!;
+    public DbSet<Customer> Customers { get; set; }
+    public DbSet<Order> Orders { get; set; }
+    public DbSet<OrderDetail> OrderDetails { get; set; }
+    public DbSet<OrderStatus> OrderStatus { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

@@ -1,4 +1,4 @@
-using rappi.Domain.Models;
+using rappi.Domain.Entities;
 
 namespace rappi.Application.Interfaces;
 

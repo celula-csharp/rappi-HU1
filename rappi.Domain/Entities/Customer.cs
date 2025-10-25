@@ -6,5 +6,5 @@ public class Customer
     public string Name { get; set; } = string.Empty;
     public string Email { get; set; } = string.Empty;
 
-    public List<Order>? Orders { get; set; } = new();
+    public ICollection<Order> Orders { get; set; } = new List<Order>();
 }

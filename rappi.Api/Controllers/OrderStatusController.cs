@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using rappi.Application.DTOs;
 using rappi.Application.Services;
-using rappi.Domain.Models;
+using rappi.Domain.Entities;
 
 namespace rappi.Api.Controllers;
 

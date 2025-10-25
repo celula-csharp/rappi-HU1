@@ -1,14 +1,16 @@
-﻿using rappi.Domain.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using rappi.Domain.Entities;
+using rappi.Infrastructure.Data;
 
 namespace rappi.Infrastructure.Repositories;
 
 public class CustomerRepository
 {
-    private readonly AppContext _db;
-    public CustomerRepository(AppContext db) => _db = db;
+    private readonly AppDbContext _db;
+    public CustomerRepository(AppDbContext db) => _db = db;
 
     public async Task<List<Customer>> GetAllAsync() =>
-        await _db.Customers.AsNoTracking().TiListAsync();
+        await _db.Customers.AsNoTracking().ToListAsync();
 
     public async Task<Customer?> GetByIdAsync(int id) =>
         await _db.Customers.FindAsync(id);

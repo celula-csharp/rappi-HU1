@@ -1,4 +1,4 @@
-namespace rappi.Domain.Models;
+namespace rappi.Domain.Entities;
 
 public class OrderDetail
 {
