@@ -52,4 +52,4 @@ http://localhost:5239/swagger
 1. Abrir postman
 2. Importar la colección desde [rappi.Api.postman_collection.json](docs/postman/rappi.Api.postman_collection.json)
 3. Importar los test de postman desde [rappi.Api.postman_test_run.json](docs/postman/rappi.Api.postman_test_run.json)
-4. (Si es necesario) Configura la variable `{{base_url}}` por el localhost en el que este corriendo la aplicación. Por ejemplo, `http://localhost:5239`
+4. Configura la variable `{{base_url}}` = `http://localhost:5239`. Es necesario que sea en el puerto 5239 para correr el test sin inconvenientes.

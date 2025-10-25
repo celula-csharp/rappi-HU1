@@ -17,7 +17,7 @@
 							"name": "{id}",
 							"item": [
 								{
-									"name": "/api/Customers/:id",
+									"name": "getCustomerById",
 									"request": {
 										"method": "GET",
 										"header": [],
@@ -43,7 +43,7 @@
 									"response": []
 								},
 								{
-									"name": "/api/Customers/:id",
+									"name": "updateCustomer",
 									"request": {
 										"method": "PUT",
 										"header": [
@@ -84,7 +84,7 @@
 									"response": []
 								},
 								{
-									"name": "/api/Customers/:id",
+									"name": "deleteCustomer",
 									"request": {
 										"method": "DELETE",
 										"header": [],
@@ -112,7 +112,7 @@
 							]
 						},
 						{
-							"name": "/api/Customers",
+							"name": "getAllCustomers",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -130,7 +130,7 @@
 							"response": []
 						},
 						{
-							"name": "/api/Customers",
+							"name": "addCustomer",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -171,7 +171,7 @@
 							"name": "{id}",
 							"item": [
 								{
-									"name": "/api/Order/:id",
+									"name": "getOrderById",
 									"request": {
 										"method": "GET",
 										"header": [],
@@ -197,7 +197,7 @@
 									"response": []
 								},
 								{
-									"name": "/api/Order/:id",
+									"name": "updateOrder",
 									"request": {
 										"method": "PUT",
 										"header": [
@@ -238,7 +238,7 @@
 									"response": []
 								},
 								{
-									"name": "/api/Order/:id",
+									"name": "deleteOrder",
 									"request": {
 										"method": "DELETE",
 										"header": [],
@@ -266,7 +266,7 @@
 							]
 						},
 						{
-							"name": "/api/Order",
+							"name": "getAllOrders",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -284,7 +284,7 @@
 							"response": []
 						},
 						{
-							"name": "/api/Order",
+							"name": "addOrder",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -325,7 +325,7 @@
 							"name": "{id}",
 							"item": [
 								{
-									"name": "/api/OrderStatus/:id",
+									"name": "getOrderStatusById",
 									"request": {
 										"method": "GET",
 										"header": [],
@@ -351,7 +351,7 @@
 									"response": []
 								},
 								{
-									"name": "/api/OrderStatus/:id",
+									"name": "updateOrderStatus",
 									"request": {
 										"method": "PUT",
 										"header": [
@@ -392,7 +392,7 @@
 									"response": []
 								},
 								{
-									"name": "/api/OrderStatus/:id",
+									"name": "deleteOrderStatus",
 									"request": {
 										"method": "DELETE",
 										"header": [],
@@ -420,7 +420,7 @@
 							]
 						},
 						{
-							"name": "/api/OrderStatus",
+							"name": "getAllOrderStatus",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -438,7 +438,7 @@
 							"response": []
 						},
 						{
-							"name": "/api/OrderStatus",
+							"name": "addOrderStatus",
 							"request": {
 								"method": "POST",
 								"header": [
