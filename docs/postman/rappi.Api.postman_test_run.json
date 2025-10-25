@@ -1,0 +1,352 @@
+{
+	"id": "44981a54-8bd8-4afa-b1d8-e64884fcd44d",
+	"name": "rappi.Api",
+	"timestamp": "2025-10-25T03:47:50.261Z",
+	"collection_id": "49539003-33429919-407b-455d-8f23-8c04d4348e03",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 0,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2025-10-25T03:47:48.155Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "05bfe5ca-cfa9-434c-9188-71366330e192",
+			"name": "/api/Customers",
+			"url": "http://localhost:5239/api/Customers",
+			"time": 12,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				12
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "888c7af6-531a-43b1-a541-742be1009054",
+			"name": "/api/Customers",
+			"url": "http://localhost:5239/api/customers",
+			"time": 9,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				9
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "fa11f9fb-bd68-40cb-adb4-853afdba572c",
+			"name": "/api/Customers/:id",
+			"url": "http://localhost:5239/api/Customers/1",
+			"time": 9,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				9
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "41e2c5ee-a632-4bc4-9d19-f6a1fac85b7a",
+			"name": "/api/Customers/:id",
+			"url": "http://localhost:5239/api/Customers/1",
+			"time": 10,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				10
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "6ec8cf6e-e2cc-48fb-b9c5-7bd9c7adea6c",
+			"name": "/api/Order",
+			"url": "http://localhost:5239/api/Order",
+			"time": 18,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				18
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "c34ebd3d-006b-406b-b784-05727d164c97",
+			"name": "/api/Order",
+			"url": "http://localhost:5239/api/Order",
+			"time": 13,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				13
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "00b958d1-6839-4c96-aee4-bfdb8733e63c",
+			"name": "/api/Order/:id",
+			"url": "http://localhost:5239/api/Order/1",
+			"time": 10,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				10
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "3d79d544-b820-4bd9-8d8b-c2a0f5f3b722",
+			"name": "/api/Order/:id",
+			"url": "http://localhost:5239/api/Order/1",
+			"time": 14,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				14
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "316a9425-9552-4327-be8c-e3a60d9c2887",
+			"name": "/api/OrderStatus",
+			"url": "http://localhost:5239/api/OrderStatus",
+			"time": 12,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				12
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "eea17510-8f56-4672-a3aa-83f646c774c1",
+			"name": "/api/OrderStatus",
+			"url": "http://localhost:5239/api/OrderStatus",
+			"time": 8,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				8
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "91b501f3-9452-466c-9a25-53bdde5d07bc",
+			"name": "/api/OrderStatus/:id",
+			"url": "http://localhost:5239/api/OrderStatus/1",
+			"time": 10,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				10
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "c3410558-035a-4ed2-a055-4d70f3ef471a",
+			"name": "/api/OrderStatus/:id",
+			"url": "http://localhost:5239/api/OrderStatus/1",
+			"time": 10,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				10
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "c236af8e-00b1-4612-b688-bd3fb5e6a5fc",
+			"name": "/api/Order/:id",
+			"url": "http://localhost:5239/api/Order/1",
+			"time": 14,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				14
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "7d30bd87-1c87-45eb-8ab4-ade7ccf67b99",
+			"name": "/api/Customers/:id",
+			"url": "http://localhost:5239/api/Customers/1",
+			"time": 10,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				10
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "d6c50b91-7bd9-4f58-8c25-809587a0b017",
+			"name": "/api/OrderStatus/:id",
+			"url": "http://localhost:5239/api/OrderStatus/2",
+			"time": 10,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				10
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 169,
+	"collection": {
+		"requests": [
+			{
+				"id": "05bfe5ca-cfa9-434c-9188-71366330e192",
+				"method": "POST"
+			},
+			{
+				"id": "888c7af6-531a-43b1-a541-742be1009054",
+				"method": "GET"
+			},
+			{
+				"id": "fa11f9fb-bd68-40cb-adb4-853afdba572c",
+				"method": "GET"
+			},
+			{
+				"id": "41e2c5ee-a632-4bc4-9d19-f6a1fac85b7a",
+				"method": "PUT"
+			},
+			{
+				"id": "6ec8cf6e-e2cc-48fb-b9c5-7bd9c7adea6c",
+				"method": "POST"
+			},
+			{
+				"id": "c34ebd3d-006b-406b-b784-05727d164c97",
+				"method": "GET"
+			},
+			{
+				"id": "00b958d1-6839-4c96-aee4-bfdb8733e63c",
+				"method": "GET"
+			},
+			{
+				"id": "3d79d544-b820-4bd9-8d8b-c2a0f5f3b722",
+				"method": "PUT"
+			},
+			{
+				"id": "316a9425-9552-4327-be8c-e3a60d9c2887",
+				"method": "POST"
+			},
+			{
+				"id": "eea17510-8f56-4672-a3aa-83f646c774c1",
+				"method": "GET"
+			},
+			{
+				"id": "91b501f3-9452-466c-9a25-53bdde5d07bc",
+				"method": "GET"
+			},
+			{
+				"id": "c3410558-035a-4ed2-a055-4d70f3ef471a",
+				"method": "PUT"
+			},
+			{
+				"id": "c236af8e-00b1-4612-b688-bd3fb5e6a5fc",
+				"method": "DELETE"
+			},
+			{
+				"id": "7d30bd87-1c87-45eb-8ab4-ade7ccf67b99",
+				"method": "DELETE"
+			},
+			{
+				"id": "d6c50b91-7bd9-4f58-8c25-809587a0b017",
+				"method": "DELETE"
+			}
+		]
+	}
+}
