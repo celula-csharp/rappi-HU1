@@ -1,0 +1,74 @@
+using Microsoft.AspNetCore.Mvc;
+using rappi.Application.DTOs;
+using rappi.Application.Interfaces;
+using rappi.Domain.Entities;
+
+namespace rappi.Api.Controllers;
+
+[ApiController]
+[Route("api/[controller]")]
+public class OrderController : ControllerBase
+{
+    private readonly IOrderService _svc;
+
+    public OrderController(IOrderService svc) => _svc = svc;
+
+    [HttpGet]
+    public async Task<IActionResult> Get() =>
+        Ok(await _svc.GetAllAsync());
+
+    [HttpGet("{id:int}")]
+    public async Task<IActionResult> GetById(int id) =>
+        (await _svc.GetByIdAsync(id)) is Order o ? Ok(o) : NotFound();
+
+    [HttpPost]
+    public async Task<IActionResult> Post([FromBody] OrderCreateDto dto)
+    {
+        try
+        {
+            var order = new Order
+            {
+                CustomerId = dto.CustomerId,
+                StatusId = dto.StatusId,
+                OrderDate = dto.OrderDate
+            };
+
+            var created = await _svc.AddAsync(order);
+            return CreatedAtAction(nameof(GetById), new { id = created.Id }, created);
+        }
+        catch (ArgumentException ex)
+        {
+            return BadRequest(new { message = ex.Message });
+        }
+    }
+
+    [HttpPut("{id:int}")]
+    public async Task<IActionResult> Put(int id, [FromBody] OrderUpdateDto dto)
+    {
+        try
+        {
+            return await _svc.UpdateStatusAsync(id, dto.StatusId)
+                ? Ok(new { Id = id, StatusId = dto.StatusId })
+                : NotFound();
+        }
+        catch (ArgumentException ex)
+        {
+            return BadRequest(new { message = ex.Message });
+        }
+    }
+
+    [HttpDelete("{id:int}")]
+    public async Task<IActionResult> Delete(int id)
+    {
+        try
+        {
+            return await _svc.DeleteAsync(id)
+                ? Ok()
+                : NotFound();
+        }
+        catch (InvalidOperationException ex)
+        {
+            return BadRequest(new { message = ex.Message });
+        }
+    }
+}

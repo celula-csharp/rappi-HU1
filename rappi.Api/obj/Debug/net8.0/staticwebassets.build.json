@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "frO5HBuqWNCgl4nB6ySbEGB/Hjcay3gxfcY7R2xHBGw=",
+  "Source": "rappi.Api",
+  "BasePath": "_content/rappi.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
