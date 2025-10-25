@@ -3,3 +3,10 @@ obj/
 /packages/
 riderModule.iml
 /_ReSharper.Caches/
+
+
+# Configuración sensible
+appsettings.json
+appsettings.*.json
+.appsettings.json
+*.env
