@@ -1,6 +1,4 @@
-using System.Runtime.Serialization;
-
-namespace rappi.Domain.Models;
+namespace rappi.Domain.Entities;
 
 public class Customer
 {

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("rappi.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+65d3a92c8ca24a6deaebdea40a6506dc3e8a8cd4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b16fba789ddf18ac6cca0e7279243664419b3e50")]
 [assembly: System.Reflection.AssemblyProductAttribute("rappi.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("rappi.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

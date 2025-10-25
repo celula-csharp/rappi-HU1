@@ -1,8 +1,3 @@
-using rappi.Application.Interfaces;
-using rappi.Application.Services;
-using rappi.Infrastructure;
-using rappi.Infrastructure.Repositories;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Conexión
@@ -34,5 +29,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseAuthorization();
 app.MapControllers();
+
 app.Run();
