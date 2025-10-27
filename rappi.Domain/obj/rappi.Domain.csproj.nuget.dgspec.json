@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\SERGIO\\RiderProjects\\rappi-HU1\\rappi.Domain\\rappi.Domain.csproj": {}
+    "/home/sergio/RiderProjects/hu1/rappi.Domain/rappi.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\SERGIO\\RiderProjects\\rappi-HU1\\rappi.Domain\\rappi.Domain.csproj": {
+    "/home/sergio/RiderProjects/hu1/rappi.Domain/rappi.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SERGIO\\RiderProjects\\rappi-HU1\\rappi.Domain\\rappi.Domain.csproj",
+        "projectUniqueName": "/home/sergio/RiderProjects/hu1/rappi.Domain/rappi.Domain.csproj",
         "projectName": "rappi.Domain",
-        "projectPath": "C:\\Users\\SERGIO\\RiderProjects\\rappi-HU1\\rappi.Domain\\rappi.Domain.csproj",
-        "packagesPath": "C:\\Users\\SERGIO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SERGIO\\RiderProjects\\rappi-HU1\\rappi.Domain\\obj\\",
+        "projectPath": "/home/sergio/RiderProjects/hu1/rappi.Domain/rappi.Domain.csproj",
+        "packagesPath": "/home/sergio/.nuget/packages/",
+        "outputPath": "/home/sergio/RiderProjects/hu1/rappi.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\SERGIO\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/sergio/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -58,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.414/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/home/sergio/.dotnet/sdk/8.0.404/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

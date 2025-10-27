@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = rappi.Application
-build_property.ProjectDir = C:\Users\SERGIO\RiderProjects\rappi-HU1\rappi.Application\
+build_property.ProjectDir = /home/sergio/RiderProjects/hu1/rappi.Application/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
